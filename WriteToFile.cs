@@ -14,13 +14,12 @@ namespace InputOutpt
 
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
+            // create path for folder 
             string filePath = Path.Combine(desktopPath, "message");
 
             // Write the content to the file
-
             File.WriteAllText(filePath, content);
             File.AppendAllText(filePath, "\n");
-
 
         }
     }

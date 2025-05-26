@@ -21,8 +21,8 @@ namespace InputOutpt
 
             ReadFromFile reader = new ReadFromFile();
 
-            
-            
+
+            // print menu and get user input
             while (run)
             {
                 string choice = printMunu();
@@ -63,6 +63,9 @@ namespace InputOutpt
             }
             return "Operation completed successfully.";
         }
+
+
+        // menu 
         public string printMunu()
         {
             Console.Clear();

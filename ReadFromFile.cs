@@ -11,10 +11,19 @@ namespace InputOutpt
 
         public string readFromFile(string filePath)
         {
+            // read the contect
             string content = File.ReadAllText(filePath);
 
-            Console.WriteLine(content);
-            return content;
+            // create  instance of Encrypt 
+            Encrypt encrypt = new Encrypt();
+
+            // decrypt the content
+            string decryptMessage = encrypt.decrypt(content);
+
+            // display the decrypted message
+            Console.WriteLine(decryptMessage);
+            
+            return decryptMessage;
         }
     }
 }

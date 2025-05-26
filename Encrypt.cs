@@ -8,6 +8,8 @@ namespace InputOutpt
 {
     internal class Encrypt
     {
+
+        // encrypt message
         public string decrypt(string input)
         {
             Dictionary<char, char> atbash = new Dictionary<char, char>();
