@@ -56,8 +56,8 @@ namespace InputOutpt
                         break;
 
                     default:
-                        return "Invalid choice. Please try again.";
-
+                        Console.WriteLine( "Invalid choice. Please try again.");
+                        break;
 
                 }
             }

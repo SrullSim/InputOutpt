@@ -18,7 +18,7 @@ namespace InputOutpt
             string filePath = Path.Combine(desktopPath, "message");
 
             // Write the content to the file
-            File.WriteAllText(filePath, content);
+            File.AppendAllText(filePath, content);
             File.AppendAllText(filePath, "\n");
 
         }
