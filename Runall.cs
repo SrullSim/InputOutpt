@@ -15,7 +15,6 @@ namespace InputOutpt
             
             // create instances
 
-            Encrypt encrypt = new Encrypt();
 
             WriteToFile writer = new WriteToFile();
 
@@ -30,25 +29,32 @@ namespace InputOutpt
                 switch (choice)
                 {
                     case "1":
-
+                        Console.Clear();
                         Console.WriteLine("Enter your message: \n");
                         string message = Console.ReadLine();
 
-                        string encryptMessage = encrypt.decrypt(message);
-
-                        writer.writeToFile(encryptMessage);
+                        writer.writeToFile(message);
 
                         break;
 
 
                     case "2":
+                        Console.Clear();
                         Console.WriteLine("enter path");
+
                         string filepath = Console.ReadLine();
+                        while(filepath == null)
+                        {
+                             filepath = Console.ReadLine();
+                        }
 
                         string readmessage = reader.readFromFile(filepath);
+                        filepath = null;
+                        Console.WriteLine(readmessage);
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadKey();
 
-                        return readmessage;
-
+                        break;
 
                     case "3":
                         Console.WriteLine("Exiting the program.");
@@ -69,12 +75,18 @@ namespace InputOutpt
         public string printMunu()
         {
             Console.Clear();
+            Console.WriteLine("===== Welcome to the Secret Messages – Atbash Cipher Writer! =====");
             Console.WriteLine("1. send a message");
             Console.WriteLine("2. read a message");
             Console.WriteLine("3. Exit");
             Console.Write("Please select an option: \n");
 
             string choice = Console.ReadLine();
+            if(choice == null)
+            {
+                Console.WriteLine("Invalid input. Please try again.");
+                return printMunu();
+            }
             return choice;
 
         
